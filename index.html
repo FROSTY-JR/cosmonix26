@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#020407">
+    <title>COSMONIX26 — Aerospace Technical Fest</title>
+    <script>
+        try {
+            const params = new URLSearchParams(window.location.search);
+            const launchWasSeen = sessionStorage.getItem('cosmonixLaunchSeen') === 'true';
+            if (params.get('skipLaunch') === 'true' || launchWasSeen) {
+                document.documentElement.classList.add('skip-launch');
+            }
+        } catch (error) {
+            // The full scene script will fall back to the normal ceremony.
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="ceremony-active">
+    <div id="cosmonix-scene" aria-hidden="true"></div>
+
+    <div id="launch-ui">
+        <div class="launch-ui-top">
+            <div class="launch-ui-kicker">ACS COLLEGE OF ENGINEERING</div>
+            <div class="launch-ui-title">COSMONIX 26</div>
+            <div id="launch-status">.    .</div>
+        </div>
+
+        <div id="countdown-display" aria-live="polite">T-10</div>
+
+        <div class="launch-ui-bottom">
+            <div class="launch-system-line">
+                <span class="launch-system-dot"></span>
+                <span>LAUNCH SYSTEM READY</span>
+            </div>
+            <button id="initiate-sequence" type="button">
+                <span class="initiate-label">Initiate</span>
+                <span class="initiate-title">Launch Sequence</span>
+                <span class="initiate-arrow" aria-hidden="true">T–10</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="final-reveal" aria-hidden="true">
+        <div class="final-small">ALL SYSTEMS NOMINAL</div>
+        <div class="final-title">COSMONIX 26</div>
+        <div class="final-live">NOW LIVE</div>
+    </div>
+
+    <main class="hero" id="home">
+        <div class="space-vignette" aria-hidden="true"></div>
+        <div class="grain" aria-hidden="true"></div>
+
+        <header class="navbar">
+            <a class="brand" href="index.html" aria-label="Cosmonix 26 home">
+                <span class="brand-mark">C</span>
+                <span class="brand-name">COSMONIX<span>26</span></span>
+            </a>
+
+            <nav class="nav-links" aria-label="Primary navigation">
+                <a href="pages/exploar.html">Events</a>
+                <a href="pages/info.html">Info</a>
+                <a href="pages/contact.html">Contact</a>
+            </nav>
+
+            <a class="nav-register" href="https://docs.google.com/forms/d/e/1FAIpQLSdu9bDfW3q5FqeM1rt-X4mJ7wAaYHbWGkNPcAWc9x0mkflUzw/viewform" target="_blank" rel="noopener noreferrer">
+                Register <span>↗</span>
+            </a>
+        </header>
+
+        <section class="hero-copy">
+            <p class="eyebrow">AEROSPACE ENGINEERING · TECHNICAL FEST</p>
+            <img class="hero-crest" src="pages/images/clogo.png" alt="Cosmonix 26 astronaut logo">
+            <h1>COSMONIX 26</h1>
+            <p class="hero-description">
+                DEPARTMENT OF AEROSPACE,<br>
+                ACS COLLEGE OF ENGINEERING
+            </p>
+
+            <div class="hero-actions">
+                <a class="primary-btn" href="pages/exploar.html">Explore <span></span></a>
+                <a class="secondary-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdu9bDfW3q5FqeM1rt-X4mJ7wAaYHbWGkNPcAWc9x0mkflUzw/viewform" target="_blank" rel="noopener noreferrer">
+                    Register <span></span>
+                </a>
+            </div>
+        </section>
+
+        <div class="scene-note">
+            <span class="pulse-dot"></span>
+            <span>LIVE FROM THE AEROSPACE LAB</span>
+        </div>
+    </main>
+
+    <audio id="launch-music" src="assets/audio/cosmonix-launch.mp3" preload="auto"></audio>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+        }
+    }
+    </script>
+
+    <script type="module" src="js/cosmonix.js"></script>
+</body>
+</html>

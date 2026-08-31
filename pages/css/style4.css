@@ -1,0 +1,241 @@
+@import url('https://fonts.cdnfonts.com/css/devil-breeze');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/bimbo');
+
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: #1B1B1B;
+    color: #eef8ce;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-image:
+    url(img/bg.png),
+    repeating-linear-gradient(
+        to right, transparent 0 500px, #73814B33 500px 501px
+    );
+    background-size: 100%;
+}
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+.section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-fit {
+    width: min(1200px, 90vw);
+    margin: auto;
+    min-height: 100vh;
+    position: relative;
+    padding-block: 10em;
+}
+header {
+    padding-block: 1em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10px;
+    backdrop-filter: blur(20px);
+    z-index: 100;
+    background-color: #1B1B1B11;
+    background-image: repeating-linear-gradient(
+        to right, transparent 0 500px, #eee1 500px 501px
+    );
+}
+header .content-fit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: unset!important;
+    padding-block: unset!important;
+}
+header .content-fit nav ul{
+    display: flex;
+    gap: 2em;
+}
+
+#banner .title {
+    color: #d1ff48;
+    font-size: 11em;
+    font-family: "devil breeze";
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+}
+#banner .title::before {
+    content: attr(data-before);
+    position: absolute;
+    top: 0.5em;
+    inset: 0.66em 0 0 0;
+    z-index: -1;
+    color: #445022;
+}
+.section .decorate {
+    position: absolute;
+}
+#intro .content-fit {
+    display: flex;
+    gap: 30%;
+    justify-content: space-between;
+    align-items: center;
+}
+.section .number {
+    font-family: "devil breeze";
+    font-size: 15em;
+    font-weight: bold;
+}
+.section .content-fit .title {
+    font-family: "devil breeze";
+    font-size: 5em;
+    font-weight: bold;
+}
+#description .content-fit {
+    padding-right: 30%;
+}
+#description .number {
+    font-size: 5em;
+}
+#description .title {
+    font-size: 7em;
+    font-weight: 500;
+}
+#contact .content-fit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+#contact table {
+    width: min(800px, 90vw);
+    padding-top: 2em;
+    font-size: 2em;
+    margin: auto;
+}
+#contact table td {
+    padding-block: 0.5em;
+    border-bottom: 1px dashed #445022;
+}
+#contact table td:nth-child(1) {
+    text-align: left;
+    font-weight: 500;
+}
+#contact table td:nth-child(2) {
+    text-align: right;
+    font-weight: 200;
+}
+#contact .sign {
+    font-family: 'Bimbo', sans-serif;
+    font-size: 2em;
+}
+#container3D {
+    position: fixed;
+    inset: 0;
+    /* background-color: red; */
+    z-index: 100;
+    pointer-events: none;
+}
+@media screen and (max-width: 1023px){
+    #banner .title {
+        font-size: 5em;
+    }
+    #intro .content-fit {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 767px){
+    #banner .title {
+        font-size: 3em;
+    }
+    #intro .content-fit {
+        flex-direction: column;
+    }
+    .section .number {
+        font-size: 5em;
+    }
+    .section .content-fit .title {
+        font-size: 2em;
+    }
+    #description .content-fit {
+        padding-right: 0;
+    }
+    #contact table {
+        font-size: 1em;
+    }
+    #contact .sign {
+        font-size: 1rem;
+    }
+    #container3D {
+        position: absolute;
+    }
+}
+.section banner img{
+    height: 1000px;
+    position: absolute;
+    position: center;
+
+}
+/* Button Container */
+.button-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Button Styles */
+.btn {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  border: 2px solid #fff;
+  background: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Specific Button Styles */
+.explore-btn {
+  border-color: #d2d4d4;
+}
+
+/* Index visual language applied to the information page. */
+body { background: #020407; color: #f5f7fa; font-family: Inter, sans-serif; background-image: radial-gradient(circle at 75% 15%, rgba(20, 78, 105, .14), transparent 32%); }
+header { background: rgba(2, 4, 7, .72); border-bottom: 1px solid rgba(255, 255, 255, .08); }
+header .content-fit { width: min(1200px, 84vw); }
+header .logo { color: #f5f7fa; font-size: 11px; font-weight: 600; line-height: 1.7; letter-spacing: .12em; text-transform: uppercase; }
+header .logo img { width: 32px; margin-right: 12px; vertical-align: middle; filter: grayscale(1) brightness(2); }
+.section { min-height: 92vh; }
+.content-fit { width: min(1100px, 84vw); padding-block: 9em; }
+#banner .title { color: #f5f7fa; font: 700 clamp(48px, 9vw, 124px)/.92 Inter, sans-serif; letter-spacing: -.07em; text-transform: uppercase; }
+#banner .title::before { color: rgba(82, 231, 255, .18); }
+.section .number { color: #52e7ff; font: 700 clamp(48px, 10vw, 140px)/1 Inter, sans-serif; letter-spacing: -.08em; }
+.section .content-fit .title, #description .title { color: #f5f7fa; font: 700 clamp(28px, 4vw, 58px)/1 Inter, sans-serif; letter-spacing: -.05em; text-transform: uppercase; }
+.des p { max-width: 760px; color: rgba(231, 238, 246, .66); font: 400 13px/1.9 Inter, sans-serif; }
+#contact table { font: 400 14px/1.5 Inter, sans-serif; }
+#contact table td { border-bottom: 1px solid rgba(255, 255, 255, .12); }
+#contact table td:first-child { color: #52e7ff; }
+#contact .sign { color: rgba(231, 238, 246, .42); font: 400 12px Inter, sans-serif; letter-spacing: .08em; }
+.decorate { opacity: .42; filter: saturate(.45) contrast(1.1); }
+@media screen and (max-width: 767px) { .content-fit { width: 86vw; padding-block: 7em; } #banner .title { font-size: 42px; } .des p { font-size: 12px; } }
